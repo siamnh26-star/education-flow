@@ -349,3 +349,21 @@ export default function MainPage() {
     </div>
   );
 }
+{/* Category Filter */}
+<section className="px-4 mb-8">
+  <div className="max-w-6xl mx-auto flex gap-3 overflow-x-auto pb-2">
+    {categories.map(cat => (
+      <button
+        key={cat}
+        onClick={() => setSelectedCategory(cat)}
+        className={`px-4 py-2 rounded-full text-sm font-bold whitespace-nowrap transition-all ${
+          selectedCategory === cat 
+            ? 'bg-green-600 text-black category-active' 
+            : 'bg-[#1a1a1a] text-green-400 border border-green-800 hover:border-green-500'
+        }`}
+      >
+        {cat}
+      </button>
+    ))}
+  </div>
+</section>
