@@ -13,8 +13,7 @@ interface ProfileData {
 export default function Navbar() {
   const { data: session, status } = useSession();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [profile, setProfile] = useState<<ProfileData>({ name: '', image: '' });
-
+  const [profile, setProfile] = useState({ name: '', image: '' } as ProfileData);
   // Load profile from localStorage
   useEffect(() => {
     if (typeof window !== 'undefined') {
