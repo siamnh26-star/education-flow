@@ -386,13 +386,28 @@ export default function AdminDashboard() {
     </div>
   );
   }
-// Add to state
-const [settings, setSettings] = useState<<SiteSettings>({
+// State
+const [coupons, setCoupons] = useState([] as Coupon[]);
+const [courses, setCourses] = useState(initialCourses);
+const [newCoupon, setNewCoupon] = useState({
+  discount: '',
+  limit: '',
+  expiry: '',
+  customCode: '',
+  useCustom: false,
+});
+const [newSlide, setNewSlide] = useState({ image: '', link: '' });
+const [newLogo, setNewLogo] = useState('');
+
+const [settings, setSettings] = useState({
   logoUrl: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=100',
   slides: [
     { image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600', link: 'https://t.me/yourchannel1' },
+    { image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600', link: 'https://t.me/yourchannel2' },
+    { image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600', link: 'https://t.me/yourchannel3' },
+    { image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600', link: 'https://t.me/yourchannel4' },
   ]
-});
+} as SiteSettings);
 
 // Load from localStorage on mount
 useEffect(() => {
