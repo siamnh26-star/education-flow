@@ -386,8 +386,6 @@ export default function AdminDashboard() {
     </div>
   );
   }
-'use client';
-
 // Add to state
 const [settings, setSettings] = useState<<SiteSettings>({
   logoUrl: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=100',
