@@ -58,3 +58,7 @@ export default function Navbar() {
     </nav>
   );
           }
+<Link href="/profile" className="flex items-center gap-3 px-4 py-3 hover:bg-green-900/20 text-green-300 transition-colors text-sm">
+  <span className="text-lg">⚙️</span> 
+  <span>Edit Profile</span>
+</Link>
