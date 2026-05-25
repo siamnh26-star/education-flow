@@ -112,3 +112,14 @@ export default function FrontPage() {
     </div>
   );
   }
+const [logoUrl, setLogoUrl] = useState('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=100');
+
+useEffect(() => {
+  if (typeof window !== 'undefined') {
+    const saved = localStorage.getItem('education_flow_settings');
+    if (saved) {
+      const settings = JSON.parse(saved);
+      setLogoUrl(settings.logoUrl);
+    }
+  }
+}, []);
