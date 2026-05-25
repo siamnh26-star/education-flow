@@ -63,3 +63,12 @@ body {
   background: rgba(74, 222, 128, 0.3);
   color: white;
 }
+/* Category animation */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 5px rgba(74, 222, 128, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(74, 222, 128, 0.6); }
+}
+
+.category-active {
+  animation: glow-pulse 2s infinite;
+}
