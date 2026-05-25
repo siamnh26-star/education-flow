@@ -386,3 +386,30 @@ export default function AdminDashboard() {
     </div>
   );
   }
+'use client';
+
+// Add to state
+const [settings, setSettings] = useState<<SiteSettings>({
+  logoUrl: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=100',
+  slides: [
+    { image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600', link: 'https://t.me/yourchannel1' },
+  ]
+});
+
+// Load from localStorage on mount
+useEffect(() => {
+  if (typeof window !== 'undefined') {
+    const saved = localStorage.getItem('education_flow_settings');
+    if (saved) {
+      setSettings(JSON.parse(saved));
+    }
+  }
+}, []);
+
+// Save to localStorage
+const saveSettings = () => {
+  if (typeof window !== 'undefined') {
+    localStorage.setItem('education_flow_settings', JSON.stringify(settings));
+    alert('Settings saved! (Note: This is temporary without server)');
+  }
+};
